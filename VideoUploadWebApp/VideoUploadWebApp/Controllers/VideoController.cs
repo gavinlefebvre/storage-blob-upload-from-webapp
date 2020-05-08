@@ -11,17 +11,17 @@ using System.Threading.Tasks;
 namespace VideoUploadWebApp.Controllers
 {
     [Route("api/[controller]")]
-    public class ImagesController : Controller
+    public class VideoController : Controller
     {
         // make sure that appsettings.json is filled with the necessary details of the azure storage
         private readonly AzureStorageConfig storageConfig = null;
 
-        public ImagesController(IOptions<AzureStorageConfig> config)
+        public VideoController(IOptions<AzureStorageConfig> config)
         {
             storageConfig = config.Value;
         }
 
-        // POST /api/images/upload
+        // POST /api/video/upload
         [HttpPost("[action]")]
         public async Task<IActionResult> Upload(ICollection<IFormFile> files)
         {
@@ -59,12 +59,12 @@ namespace VideoUploadWebApp.Controllers
                 if (isUploaded)
                 {
                     if (storageConfig.ThumbnailContainer != string.Empty)
-                        return new AcceptedAtActionResult("GetThumbNails", "Images", null, null);
+                        return new AcceptedAtActionResult("GetThumbNails", "video", null, null);
                     else
                         return new AcceptedResult();
                 }
                 else
-                    return BadRequest("Look like the image couldnt upload to the storage");
+                    return BadRequest("Looks like the image couldn't upload to the storage!");
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace VideoUploadWebApp.Controllers
             }
         }
 
-        // GET /api/images/thumbnails
+        // GET /api/video/thumbnails
         [HttpGet("thumbnails")]
         public async Task<IActionResult> GetThumbNails()
         {
