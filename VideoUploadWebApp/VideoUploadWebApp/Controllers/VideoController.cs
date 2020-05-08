@@ -35,12 +35,12 @@ namespace VideoUploadWebApp.Controllers
                 if (storageConfig.AccountKey == string.Empty || storageConfig.AccountName == string.Empty)
                     return BadRequest("sorry, can't retrieve your azure storage details from appsettings.js, make sure that you add azure storage details there");
 
-                if (storageConfig.ImageContainer == string.Empty)
+                if (storageConfig.VideoContainer == string.Empty)
                     return BadRequest("Please provide a name for your image container in the azure blob storage");
 
                 foreach (var formFile in files)
                 {
-                    if (StorageHelper.IsImage(formFile))
+                    if (StorageHelper.IsVideo(formFile))
                     {
                         if (formFile.Length > 0)
                         {
@@ -81,7 +81,7 @@ namespace VideoUploadWebApp.Controllers
                 if (storageConfig.AccountKey == string.Empty || storageConfig.AccountName == string.Empty)
                     return BadRequest("Sorry, can't retrieve your Azure storage details from appsettings.js, make sure that you add Azure storage details there.");
 
-                if (storageConfig.ImageContainer == string.Empty)
+                if (storageConfig.VideoContainer == string.Empty)
                     return BadRequest("Please provide a name for your image container in Azure blob storage.");
 
                 List<string> thumbnailUrls = await StorageHelper.GetThumbNailUrls(storageConfig);

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26510.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IVideoUploadWebApp", "IVideoUploadWebApp\IVideoUploadWebApp.csproj", "{2D9BD5DF-DC9A-4A10-B96D-CDC923D1A54A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoUploadWebApp", "VideoUploadWebApp\VideoUploadWebApp.csproj", "{2D9BD5DF-DC9A-4A10-B96D-CDC923D1A54A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
