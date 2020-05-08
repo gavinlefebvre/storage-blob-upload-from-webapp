@@ -56,7 +56,7 @@
         <hr>
         <h2>Upload photos</h2>
         <div>
-            <form action="/api/videos/upload"
+            <form action="/api/video/upload"
                  class="dropzone needsclick dz-clickable" 
                  id="image-upload"
                  method="post"
@@ -104,7 +104,7 @@
     // Grab links for images from backend api
     function fetchImageLinks() {
         // Fetch images
-        $.get("api/Images/thumbnails", function(fetchedImageLinks) {
+        $.get("api/video/thumbnails", function(fetchedImageLinks) {
             console.log(fetchedImageLinks)
 
             // Check if anything is in there
